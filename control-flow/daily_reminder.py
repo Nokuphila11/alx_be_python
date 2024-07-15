@@ -1,31 +1,22 @@
 def main():
     # Ask user to input task description
-    task = input("Enter the task description: ")
+    task = input("Enter your task: ")
     
     # Ask user to input task priority
-    priority = input("Enter the task's priority (high, medium, low): ").lower()
+    priority = input("Priority (high/medium/low): ").lower()
     
     # Ask user if task is time-bound
-    time_bound = input("Is the task time-bound? (yes or no): ").lower()
+    time_bound = input("Is it time-bound? (yes/no): ").lower()
     
-    # Process the task based on priority and time sensitivity
-    if priority == 'high':
-        reminder = f"Task '{task}' is high priority"
-    elif priority == 'medium':
-        reminder = f"Task '{task}' is medium priority"
-    elif priority == 'low':
-        reminder = f"Task '{task}' is low priority"
+    # Prepare the reminder based on inputs
+    if priority == 'high' and time_bound == 'yes':
+        reminder = f"Reminder: '{task}' is a high priority task that requires immediate attention today!"
     else:
-        print("Invalid priority level")
-        return
-    
-    if time_bound == 'yes':
-        reminder += ", that requires immediate attention today!"
-    elif time_bound == 'no':
-        reminder += ", no immediate action needed."
-    else:
-        print("Invalid time-bound response")
-        return
-    
-    # Print the customized reminder
+        reminder = f"Reminder: '{task}' is a {priority} priority task."
+        
+    # Print the reminder
     print(reminder)
+
+if __name__ == "__main__":
+    main()
+
