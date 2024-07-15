@@ -1,26 +1,27 @@
 def main():
     # Ask user for the first number
-    first_number = float(input("Enter the first number: "))
+    num1 = float(input("Enter the first number: "))
     
     # Ask user for the second number
-    second_number = float(input("Enter the second number: "))
+    num2 = float(input("Enter the second number: "))
     
     # Ask user to choose the operation
     operation = input("Choose the operation (+, -, *, /): ")
     
     # Perform the calculation based on the chosen operation
+    result = 0
     if operation == '+':
-        result = first_number + second_number
+        result = num1 + num2
     elif operation == '-':
-        result = first_number - second_number
+        result = num1 - num2
     elif operation == '*':
-        result = first_number * second_number
+        result = num1 * num2
     elif operation == '/':
-        if second_number != 0:
-            result = first_number / second_number
-        else:
-            print("Error: Division by zero")
+        if num2 == 0:
+            print("Cannot divide by zero.")
             return
+        else:
+            result = num1 / num2
     else:
         print("Invalid operation")
         return
