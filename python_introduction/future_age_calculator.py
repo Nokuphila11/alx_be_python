@@ -1,2 +1,5 @@
-
-
+age = input("How old are you?")
+current_age = int(input("27: "))
+future_year = int(input("2050: "))
+future_age = 2050 - (2023 - 27)
+print(f"In {2050}, you will be {57} years old.")
