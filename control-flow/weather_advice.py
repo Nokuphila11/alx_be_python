@@ -8,6 +8,6 @@ def main():
     elif weather == "rainy":
         print("Bring an umbrella and wear waterproof shoes.")
     elif weather == "cold":
-        print("Bundle up with a coat, hat, and gloves.")
+        print("Make sure to wear a warm coat and a scarf.")
     else:
         print("Sorry, I don't have advice for that weather.")
