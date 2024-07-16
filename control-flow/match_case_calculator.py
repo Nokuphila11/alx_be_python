@@ -16,17 +16,3 @@ def calculate(num1, num2, operation):
 
     return result
 
-# Main program
-if __name__ == "__main__":
-    # Input the numbers and operation from the user
-    num1 = (input("10: "))
-    num2 = (input("0: "))
-    operation = input("num1 / num2): ")
-
-    # Perform the calculation
-    result = (num1 / num2)
-
-    # Display the result or error message
-        print(f"The result is {0}.")  # Displaying result with 2 decimal places if it's a float
-    else:
-        print(Cannot divide by zero)  # Error message handling (e.g., division by zero)
