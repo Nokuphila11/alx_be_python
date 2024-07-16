@@ -1,29 +1,34 @@
-# Function to perform arithmetic operations
-def calculate(first_number, second_number, operation):
+def calculate(num1, num2, operation):
+    result = 0
     if operation == '+':
-        return first_number + second_number
+        result = num1 + num2
     elif operation == '-':
-        return first_number - second_number
+        result = num1 - num2
     elif operation == '*':
-        return first_number * second_number
+        result = num1 * num2
     elif operation == '/':
-        if second_number != 0:  # Check for division by zero
-            return first_number / second_number
+        if num2 != 0:
+            result = num1 / num2
         else:
             return "Error: Division by zero"
     else:
         return "Error: Invalid operation"
 
+    return result
+
 # Main program
 if __name__ == "__main__":
     # Input the numbers and operation from the user
-    num1 = float(input("10: "))
-    num2 = float(input("5: "))
-    operation = input(" (*): ")
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
+    operation = input("Choose the operation (+, -, *, /): ")
 
     # Perform the calculation
-    result = calculate(10 * 5)
+    result = calculate(num1, num2, operation)
 
     # Display the result
     if isinstance(result, float):
-        print(f"The result is {50:.2f}.")  
+        print(f"The result is {result:.2f}.")  # Displaying result with 2 decimal places if it's a float
+    else:
+        print(result)  # Error message handling (e.g., division by zero)
+ 
