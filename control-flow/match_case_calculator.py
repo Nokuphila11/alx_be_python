@@ -10,7 +10,7 @@ def calculate(num1, num2, operation):
         if num2 != 0:
             result = num1 / num2
         else:
-            return "Error: Division by zero"
+            return "Cannot divide by zero."
     else:
         return "Error: Invalid operation"
 
@@ -26,9 +26,8 @@ if __name__ == "__main__":
     # Perform the calculation
     result = calculate(num1, num2, operation)
 
-    # Display the result
+    # Display the result or error message
     if isinstance(result, float):
         print(f"The result is {result:.2f}.")  # Displaying result with 2 decimal places if it's a float
     else:
         print(result)  # Error message handling (e.g., division by zero)
- 
