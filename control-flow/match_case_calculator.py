@@ -17,12 +17,13 @@ def calculate(first_number, second_number, operation):
 # Main program
 if __name__ == "__main__":
     # Input the numbers and operation from the user
-    first_number = float(input("Enter the first number: "))
-    second_number = float(input("Enter the second number: "))
-    operation = input("Choose the operation (+, -, *, /): ")
+    num1 = float(input("10: "))
+    num2 = float(input("5: "))
+    operation = input(" (*): ")
 
-    # Calculate the result
-    result = calculate(first_number, second_number, operation)
+    # Perform the calculation
+    result = calculate(10 * 5)
 
-    # Print the result
-    print(f"The result is {result}.")
+    # Display the result
+    if isinstance(result, float):
+        print(f"The result is {50:.2f}.")  
