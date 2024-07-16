@@ -1,30 +1,28 @@
-def main():
-    # Ask user for the first number
-    num1 = float(input("Enter the first number: "))
-    
-    # Ask user for the second number
-    num2 = float(input("Enter the second number: "))
-    
-    # Ask user to choose the operation
-    operation = input("Choose the operation (+, -, *, /): ")
-    
-    # Perform the calculation based on the chosen operation
-    result = 0
+# Function to perform arithmetic operations
+def calculate(first_number, second_number, operation):
     if operation == '+':
-        result = num1 + num2
+        return first_number + second_number
     elif operation == '-':
-        result = num1 - num2
+        return first_number - second_number
     elif operation == '*':
-        result = num1 * num2
+        return first_number * second_number
     elif operation == '/':
-        if num2 == 0:
-            print("Cannot divide by zero.")
-            return
+        if second_number != 0:  # Check for division by zero
+            return first_number / second_number
         else:
-            result = num1 / num2
+            return "Error: Division by zero"
     else:
-        print("Invalid operation")
-        return
-    
+        return "Error: Invalid operation"
+
+# Main program
+if __name__ == "__main__":
+    # Input the numbers and operation from the user
+    first_number = float(input("Enter the first number: "))
+    second_number = float(input("Enter the second number: "))
+    operation = input("Choose the operation (+, -, *, /): ")
+
+    # Calculate the result
+    result = calculate(first_number, second_number, operation)
+
     # Print the result
     print(f"The result is {result}.")
