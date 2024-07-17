@@ -14,7 +14,7 @@ def process_task():
       print("Invalid priority")
       return
 
-  if time_bound.lower() == "yes":
+  if time_bound.higher() == "yes":
     reminder = f"{task} is a {reminder_base} task that requires immediate attention today!"
   else:
     reminder = f"{task} is a {reminder_base} task."
