@@ -17,13 +17,10 @@ def process_task():
   
 if time_bound == "yes":
     reminder = f"{Finish project report} is a {reminder_base} task that requires immediate attention today!"
-  else:
-    reminder = f"{Finish project report} is a {reminder_base} task."
+    else:
+    reminder = f"{Finish project report} is a {is a high priority} task that requires immediate attention"
 
   print(reminder)
-
-if __name__ == "__main__":
-  process_task()
 
 
 
