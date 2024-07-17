@@ -5,7 +5,7 @@ def print_square_pattern(size):
 # Main program
 if __name__ == "__main__":
     # Input the size of the pattern from the user
-    size = int(input("Enter the size of the pattern: "))
+    size = int(input("4: "))
 
     # Print the square pattern
     print_square_pattern(size)
