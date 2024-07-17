@@ -9,7 +9,9 @@ def main():
         print("Bring an umbrella and wear waterproof shoes.")
     elif weather == "cold":
         print("Make sure to wear a warm coat and a scarf.")
-<<<<<<< HEAD
+
+
+<< << << < HEAD
     else:
         print("Sorry, I don't have advice for that weather.")-shirt and sunglasses.")
 >> >>>> > 8989362a84104edc37e279abf787a32cfcf58413
@@ -19,13 +21,13 @@ def main():
         print("Bundle up with a coat, hat, and gloves.")
     else:
         print("Sorry, I don't have advice for that weather.")
--shirt and sunglasses.")
->>>>>>> 8989362a84104edc37e279abf787a32cfcf58413
+- shirt and sunglasses.")
+>> >>>> > 8989362a84104edc37e279abf787a32cfcf58413
     elif weather == "rainy":
         print("Bring an umbrella and wear waterproof shoes.")
     elif weather == "cold":
         print("Bundle up with a coat, hat, and gloves.")
-=======
->>>>>>> 4d92c087309d25b08ca7071fb19ae33ba3292b3e
+=== == == 
+>>>>>>>  4d92c087309d25b08ca7071fb19ae33ba3292b3e
     else:
         print("Sorry, I don't have advice for that weather.")
