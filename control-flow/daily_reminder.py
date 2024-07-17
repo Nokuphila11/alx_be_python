@@ -10,7 +10,7 @@ def process_task():
   if time_bound.lower() == "yes":
     reminder = f"'{task}' is a {reminder_base} task that requires immediate attention today!"
   else:
-    reminder = f"'{task}' is a {reminder_base} task. Consider completing it when you have free time."
+    reminder = f"'{task}' is a {reminder_base} task."
 
   print(reminder)
 
