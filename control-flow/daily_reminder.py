@@ -1,32 +1,37 @@
-def process_task(task, priority, time_bound):
-    # React differently based on priority using match case
-    match priority:
-        case 'high':
-            reminder = f"'{task}' is a high priority task"
-        case 'medium':
-            reminder = f"'{task}' is a medium priority task"
-        case 'low':
-            reminder = f"'{task}' is a low priority task"
-        case _:
-            return "Error: Invalid priority"
+# Function to process the task and generate reminder
+def generate_reminder(task, priority, time_bound):
+    # Determine priority level
+    if priority == 'high':
+        priority_text = "high priority"
+    elif priority == 'medium':
+        priority_text = "medium priority"
+    elif priority == 'low':
+        priority_text = "low priority"
+    else:
+        return "Error: Invalid priority"
 
-    # Modify reminder if the task is time-bound
-    if time_bound.lower() == 'yes':
-        reminder += " that requires immediate attention today!"
+    # Determine if task requires immediate attention
+    if time_bound == 'yes':
+        attention_text = "that requires immediate attention today!"
+    elif time_bound == 'no':
+        attention_text = ""
+    else:
+        return "Error: Invalid time-bound response"
 
+    # Construct and return the reminder message
+    reminder = f"'{task}' is a {priority_text} task {attention_text}"
     return reminder
 
 # Main program
 if __name__ == "__main__":
-    # Input task details from the user
+    # Prompt user for task details
     task = input("Enter your task: ")
-    priority = input("Priority (high/medium/low): ").lower()  # Convert to lowercase for case insensitivity
-    time_bound = input("Is it time-bound? (yes/no): ").lower()  # Convert to lowercase for case insensitivity
+    priority = input("Priority (high/medium/low): ").strip().lower()
+    time_bound = input("Is it time-bound? (yes/no): ").strip().lower()
 
-    # Process the task and get the reminder
-    reminder = process_task(task, priority, time_bound)
-
-    # Display the reminder
+    # Generate and print the reminder message
+    reminder = generate_reminder(task, priority, time_bound)
     print(f"\nReminder: {reminder}")
+
 
 
