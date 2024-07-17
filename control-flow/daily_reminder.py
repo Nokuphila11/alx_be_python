@@ -19,6 +19,7 @@ if time_bound == "yes":
     reminder = f"{Finish project report} is a {reminder_base} task that requires immediate attention today!"
 else:
     reminder = f"{Finish project report} is a {reminder_base} task."
+  print("Reminder: 'Finish project report' is a high priority task that requires immediate attention today!")
 
 
 
