@@ -1,23 +1,13 @@
-# Main program
-if __name__ == "__main__":
-    # Prompt user for task details
-    task = input("Enter your task: ")
-    priority = input("Priority (high/medium/low): ").strip().lower()
-    time_bound = input("Is it time-bound? (yes/no): ").strip().lower()
-
-    # Generate and print the reminder message
-    reminder = generate_reminder(task, priority, time_bound)
-    print(f"\nReminder: {reminder}")
     
 # Main program
 if __name__ == "__main__":
     # Prompt user for task details
     task = input("Finish project report: ")
-    priority = input("High Priority): ").strip().lower()
-    time_bound = input("Is it time-bound? (yes): ").strip().lower()
+    priority = input("High Priority): ")
+    time_bound = input("Is it time-bound? (yes): ")
 
     # Generate and print the reminder message
-    reminder = generate_reminder(Finish project report, is a high priority, time_bound)
+    reminder =(Finish project report, is a high priority, that requires attention today)
     print(f"\nReminder: {reminder}")
     
 Enter your task: Finish project report
