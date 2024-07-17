@@ -20,13 +20,6 @@ if time_bound == "yes":
 else:
     reminder = f"{Finish project report} is a {reminder_base} task."
 
-   def print_reminder():
-  """Prints a pre-defined reminder message."""
-  reminder = "Reminder: 'Finish project report' is a high priority task that requires immediate attention today!"
-  print(reminder)
-
-if __name__ == "__main__":
-  print_reminder()
 
 
 
