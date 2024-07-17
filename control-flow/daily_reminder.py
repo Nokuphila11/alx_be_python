@@ -1,4 +1,3 @@
-
 def process_task():
   task = input("Enter your task: ")
   priority = input("Priority (high/medium/low): ")
