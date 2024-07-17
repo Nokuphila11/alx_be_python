@@ -1,17 +1,27 @@
-    
-   task = input("Enter your task: ")
-    priority = input("Priority (high/medium/low): ").strip().lower()
-    time_bound = input("Is it time-bound? (yes/no): ").strip().lower()
 
- task = input("Finish project report: ")
-    priority = input("High Priority): ").strip().lower()
-    time_bound = input("Is it time-bound? (yes): ").strip().lower()
+def process_task():
+  task = input("Enter your task: ")
+  priority = input("Priority (high/medium/low): ")
+  time_bound = input("Is it time-bound? (yes/no): ")
 
-    # Generate and print the reminder message
-    reminder =(Finish project report, is a high priority, that requires attention today)
-    print(f"\nReminder: {reminder}")
-    
-Enter your task: Finish project report
-Priority (high/medium/low): high
-Is it time-bound? (yes/no): yes
-Reminder: 'Finish project report' is a high priority task that requires immediate attention today!
+  match priority:
+    case "high":
+      reminder_base = "high priority"
+    case "medium":
+      reminder_base = "medium priority"
+    case "low":
+      reminder_base = "low priority"
+    case _:
+      print("Invalid priority")
+      return
+
+  if time_bound.lower() == "yes":
+    reminder = f"{task} is a {reminder_base} task that requires immediate attention today!"
+  else:
+    reminder = f"{task} is a {reminder_base} task."
+
+  print(reminder)
+
+if __name__ == "__main__":
+  process_task()
+
