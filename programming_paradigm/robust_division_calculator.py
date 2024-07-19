@@ -20,19 +20,6 @@ def safe_divide(numerator, denominator):
 # result = safe_divide(num, den)
 # print(result)
 
-def divide_numbers(numerator, denominator):
-  """Divides two numbers and returns the result."""
-  if denominator == 0:
-    return "Error: Cannot divide by zero"
-  else:
-    result = numerator / denominator
-    return f"The result of the division is {result:.1f}"
-
-# Example usage:
-numerator = 30
-denominator = 5
-result = divide_numbers(numerator, denominator)
-print(result)
 
 def safe_divide(numerator, denominator):
   """Performs division with error handling for zero division and non-numeric input."""
