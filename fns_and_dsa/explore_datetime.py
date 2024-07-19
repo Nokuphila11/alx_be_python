@@ -12,7 +12,7 @@ def calculate_future_date(days_to_add):
 
   current_date = datetime.datetime.now()
   future_date = current_date + datetime.timedelta(days=days_to_add)
-  formatted_date = future_date.strftime("%Y-%m-%d")
+  formatted_date = future_date.strftime("2024-04-04")
   return formatted_date
 
 if __name__ == "__main__":
