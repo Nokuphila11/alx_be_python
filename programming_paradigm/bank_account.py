@@ -28,3 +28,21 @@ account.deposit(500)
 account.withdraw(200)
 account.withdraw(1500)  # Insufficient funds
 account.display_balance()
+class BankAccount:
+    # ... existing code ...
+
+    @staticmethod
+    def perform_action(action, amount=None):
+        # Create an account instance with initial balance of 0 (for display)
+        account = BankAccount(0)
+        if action == "deposit":
+            account.deposit(amount)
+        elif action == "withdraw":
+            result = account.withdraw(amount)
+            if not result:
+                print("Insufficient funds.")
+        elif action == "display":
+            account.display_balance()
+        else:
+            print("Invalid action.")
+
