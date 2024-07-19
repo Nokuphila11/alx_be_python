@@ -1,19 +1,21 @@
-import sys
-from robust_division_calculator import safe_divide
-
-def main():
-  """Handles command-line arguments and performs safe division."""
-  if len(sys.argv) != 3:
-    print("Usage: python main.py <numerator> <denominator>")
-    sys.exit(1)
+def safe_divide(numerator, denominator):
+  """Performs division handling division by zero and non-numeric input."""
+  try:
+    # Attempt conversion to floats
+    numerator = float(numerator)
+    denominator = float(denominator)
+  except ValueError:
+    return "Invalid input: Please provide numeric values."
 
   try:
-    numerator = sys.argv[1]
-    denominator = sys.argv[2]
-    result = safe_divide(numerator, denominator)
-    print(result)
-  except:  # Catch any unexpected errors
-    print("An unexpected error occurred. Please try again with valid numeric inputs.")
+    # Perform division with ZeroDivisionError handling
+    result = numerator / denominator
+    return result
+  except ZeroDivisionError:
+    return "Division by zero is not allowed."
 
-if __name__ == "__main__":
-  main()
+# Example usage (uncomment for testing)
+# num = input("Enter numerator: ")
+# den = input("Enter denominator: ")
+# result = safe_divide(num, den)
+# print(result)
