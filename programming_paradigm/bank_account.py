@@ -31,6 +31,28 @@ account.display_balance()
 class BankAccount:
     # ... existing code ...
 
+    class BankAccount:
+    def __init__(self, initial_balance=0):
+        self.account_balance = initial_balance
+
+    # Existing deposit, withdraw, and display_balance methods
+
+    @staticmethod
+    def perform_action(action, amount=None):
+        account = BankAccount(0)  # Create temporary account (for display)
+        if action == "deposit":
+            account.deposit(amount)
+            print(deposit_message(amount))  # Call separate deposit message function
+        elif action == "withdraw":
+            result = account.withdraw(amount)
+            if not result:
+                print("Insufficient funds.")
+        elif action == "display":
+            account.display_balance()
+        else:
+            print("Invalid action.")
+
+
 def display_balance(amount):
   print(f"Current Balance: ${amount:.2f}")
 
