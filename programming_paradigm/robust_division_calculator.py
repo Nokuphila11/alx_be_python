@@ -19,3 +19,15 @@ def safe_divide(numerator, denominator):
 # den = input("Enter denominator: ")
 # result = safe_divide(num, den)
 # print(result)
+def safe_divide(numerator, denominator):
+  """Performs division with error handling for zero division and non-numeric input."""
+  try:
+    # Attempt to convert arguments to floats for division
+    numerator = float(numerator)
+    denominator = float(denominator)
+    result = numerator / denominator
+    return f"The result of the division is {result:.2f}"  # Format to 2 decimal places
+  except ZeroDivisionError:
+    return "Error: Cannot divide by zero."
+  except ValueError:
+    return "Error: Please enter numeric values only."
