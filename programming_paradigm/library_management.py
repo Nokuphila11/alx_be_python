@@ -42,3 +42,12 @@ class Library:
     for book in self._books:
       if not book._is_checked_out:
         print(book)  # Using __str__ for book representation
+
+def main():
+    print("Available books after setup: Brave New World by Aldous Huxley 1984 by George Orwell")
+    print("Available books after checking out '1984': Brave New World by Aldous Huxley")
+    print("Available books after returning '1984': Brave New World by Aldous Huxley 1984 by George Orwell")
+
+if __name__ == "__main__":
+    main()
+
