@@ -41,6 +41,25 @@ class Library:
             if not book._is_checked_out:
                 print(book)  # Using __str__ for book representation
 
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+        self._is_checked_out = False
+
+    def get_title(self):
+        return self.title
+
+    def get_author(self):
+        return self.author
+
+    def is_checked_out(self):
+        return self._is_checked_out
+
+class Library:
+    # ... (existing Library class code)
+
+
 def main():
     print("Available books after setup: Brave New World by Aldous Huxley 1984 by George Orwell")
     print("1984 has been checked out.")
