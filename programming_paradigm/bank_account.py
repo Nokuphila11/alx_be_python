@@ -38,3 +38,9 @@ def display_balance(amount):
 balance = 1234.5678
 display_balance(balance)
 
+def deposit_message(amount):
+  print(f"Deposited: ${amount:.2f}")
+
+# Example usage:
+amount = 50
+deposit_message(amount)
