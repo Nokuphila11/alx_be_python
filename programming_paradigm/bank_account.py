@@ -1,68 +1,54 @@
+# bank_account.py
+
 class BankAccount:
     def __init__(self, initial_balance=0):
-        self.account_balance = initial_balance
+        self._account_balance = initial_balance  # Private attribute for balance
 
     def deposit(self, amount):
+        """Deposit a specified amount into the account."""
         if amount > 0:
-            self.account_balance += amount
-            print(f"Deposited {amount}. New balance: {self.account_balance}")
-        else:
-            print("Invalid deposit amount.")
+            self._account_balance += amount
 
     def withdraw(self, amount):
-        if amount > 0 and amount <= self.account_balance:
-            self.account_balance -= amount
-            print(f"Withdrew {amount}. New balance: {self.account_balance}")
+        """Withdraw a specified amount from the account if funds are sufficient."""
+        if amount > 0 and amount <= self._account_balance:
+            self._account_balance -= amount
             return True
-        else:
-            print("Insufficient funds or invalid withdrawal amount.")
-            return False
+        return False
 
     def display_balance(self):
-        print(f"Current balance: {self.account_balance}")
+        """Display the current balance in a user-friendly format."""
+        print(f"Current Balance: ${self._account_balance:.2f}")
 
-# Example usage:
-account = BankAccount(1000)  # Create an account with an initial balance of 1000
-account.display_balance()
-account.deposit(500)
-account.withdraw(200)
-account.withdraw(1500)  # Insufficient funds
-account.display_balance()
-class BankAccount:
-    # ... existing code ...
+# main-0.py
 
-    class BankAccount:
-    def __init__(self, initial_balance=0):
-        self.account_balance = initial_balance
+import sys
+from bank_account import BankAccount
 
-    # Existing deposit, withdraw, and display_balance methods
+def main():
+    account = BankAccount(100)  # Example starting balance
 
-    @staticmethod
-    def perform_action(action, amount=None):
-        account = BankAccount(0)  # Create temporary account (for display)
-        if action == "deposit":
-            account.deposit(amount)
-            print(deposit_message(amount))  # Call separate deposit message function
-        elif action == "withdraw":
-            result = account.withdraw(amount)
-            if not result:
-                print("Insufficient funds.")
-        elif action == "display":
-            account.display_balance()
+    if len(sys.argv) < 2:
+        print("Usage: python main-0.py <command>:<amount>")
+        print("Commands: deposit, withdraw, display")
+        sys.exit(1)
+
+    command, *params = sys.argv[1].split(':')
+    amount = float(params[0]) if params else None
+
+    if command == "deposit" and amount is not None:
+        account.deposit(amount)
+        print(f"Deposited: ${amount:.2f}")
+    elif command == "withdraw" and amount is not None:
+        if account.withdraw(amount):
+            print(f"Withdrew: ${amount:.2f}")
         else:
-            print("Invalid action.")
+            print("Insufficient funds.")
+    elif command == "display":
+        account.display_balance()
+    else:
+        print("Invalid command.")
 
+if __name__ == "__main__":
+    main()
 
-def display_balance(amount):
-  print(f"Current Balance: ${amount:.2f}")
-
-# Example usage:
-balance = 1234.5678
-display_balance(balance)
-
-def deposit_message(amount):
-  print(f"Deposited: ${amount:.2f}")
-
-# Example usage:
-amount = 50
-deposit_message(amount)
