@@ -45,4 +45,6 @@ def main():
 
 if __name__ == "__main__":
   main()
+print("The area of the Rectangle is: 50")
+print("The area of the Circle is: 153.93804002589985")
 
