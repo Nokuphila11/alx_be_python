@@ -1,17 +1,17 @@
-# Global conversion factors
+# Define global conversion factors
 FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
 CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
 FAHRENHEIT_FREEZING_POINT = 32
 CELSIUS_FREEZING_POINT = 0
 
 def convert_to_celsius(fahrenheit):
-    """Converts Fahrenheit to Celsius."""
+    """Converts Fahrenheit to Celsius using global conversion factors."""
     global FAHRENHEIT_TO_CELSIUS_FACTOR, FAHRENHEIT_FREEZING_POINT
     return (fahrenheit - FAHRENHEIT_FREEZING_POINT) * FAHRENHEIT_TO_CELSIUS_FACTOR
 
 def convert_to_fahrenheit(celsius):
-    """Converts Celsius to Fahrenheit."""
-    global CELSIUS_TO_FAHRENHEIT_FACTOR, CELSIUS_FREEZING_POINT
+    """Converts Celsius to Fahrenheit using global conversion factors."""
+    global CELSIUS_TO_FAHRENHEIT_FACTOR, FAHRENHEIT_FREEZING_POINT
     return celsius * CELSIUS_TO_FAHRENHEIT_FACTOR + FAHRENHEIT_FREEZING_POINT
 
 def main():
@@ -38,4 +38,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
