@@ -45,5 +45,16 @@ def main():
 
 if __name__ == "__main__":
     main()
+import math
+
+def calculate_circle_area(radius):
+  """Calculates the area of a circle given its radius."""
+  area = math.pi * radius**2
+  return area
+
+radius = 7  # Replace with desired radius
+
+circle_area = calculate_circle_area(radius)
+print("The area of the Circle is:", circle_area)
 
 
