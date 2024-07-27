@@ -28,7 +28,7 @@ class Circle(Shape):
 
   def area(self):
     """Calculates and returns the area of the circle using pi."""
-    return pi * self.radius**2
+    return pi * self.radius**2”
 
 from polymorphism_demo import Shape, Rectangle, Circle
 import math
@@ -45,6 +45,5 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
 
