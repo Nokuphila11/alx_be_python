@@ -10,7 +10,7 @@ def convert_to_celsius(fahrenheit):
 
 def convert_to_fahrenheit(celsius):
     """Convert Celsius to Fahrenheit."""
-    return celsius * CELSIUS_TO_FAHRENHEIT_FACTOR + FAHRENHEIT_OFFSET
+    return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + FAHRENHEIT_OFFSET
 
 def main():
     try:
@@ -22,11 +22,11 @@ def main():
         if unit == 'C':
             # Convert Celsius to Fahrenheit
             result = convert_to_fahrenheit(temp_value)
-            print(f"{temp_value}°C is {result}°F")
+            print(f"{temp_value}°C is {result:.2f}°F")
         elif unit == 'F':
             # Convert Fahrenheit to Celsius
             result = convert_to_celsius(temp_value)
-            print(f"{temp_value}°F is {result}°C")
+            print(f"{temp_value}°F is {result:.2f}°C")
         else:
             print("Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
     except ValueError:
@@ -34,6 +34,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
