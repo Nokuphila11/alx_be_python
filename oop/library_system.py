@@ -1,19 +1,55 @@
-from library_system import Book, EBook, PrintBook, Library
+class Book:
+  """Base class representing a book."""
 
-def main():
-  """Demonstrates creating and using the Library class."""
-  my_library = Library()
+  def __init__(self, title, author):
+    """Initializes the book with title and author."""
+    self.title = title
+    self.author = author
 
-  classic_book = Book("Pride and Prejudice", "Jane Austen")
-  digital_novel = EBook("Snow Crash", "Neal Stephenson", 500)
-  paper_novel = PrintBook("The Catcher in the Rye", "J.D. Salinger", 234)
+class EBook(Book):
+  """Derived class representing an ebook."""
 
-  my_library.add_book(classic_book)
-  my_library.add_book(digital_novel)
-  my_library.add_book(paper_novel)
+  def __init__(self, title, author, file_size):
+    """
+    Initializes the ebook with additional file_size attribute.
+    Calls the base class __init__ for title and author.
+    """
+    super().__init__(title, author)
+    self.file_size = file_size
 
-  my_library.list_books()
+class PrintBook(Book):
+  """Derived class representing a printed book."""
 
-if __name__ == "__main__":
-  main()
+  def __init__(self, title, author, page_count):
+    """
+    Initializes the printed book with additional page_count attribute.
+    Calls the base class __init__ for title and author.
+    """
+    super().__init__(title, author)
+    self.page_count = page_count
+
+class Library:
+  """Class representing a library that manages a collection of books."""
+
+  def __init__(self):
+    """Initializes the library with an empty list of books."""
+    self.books = []
+
+  def add_book(self, book):
+    """Adds a Book, EBook, or PrintBook instance to the library."""
+    if isinstance(book, Book):
+      self.books.append(book)
+    else:
+      print(f"Invalid book type: {type(book)}")
+
+  def list_books(self):
+    """Prints details of each book in the library."""
+    if not self.books:
+      print("No books in the library.")
+      return
+
+    for book in self.books:
+      print(f"{book.title} by {book.author}")  # Print common attributes
+
+
 
