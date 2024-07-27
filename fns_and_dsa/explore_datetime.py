@@ -1,23 +1,32 @@
-import datetime
+# explore_datetime.py
 
-def calculate_future_date(days_to_add):
-  """Calculates the future date by adding the specified number of days to the current date.
+from datetime import datetime, timedelta
 
-  Args:
-    days_to_add: The number of days to add.
+def display_current_datetime():
+    """Display the current date and time in a readable format."""
+    current_date = datetime.now()
+    formatted_date = current_date.strftime("%Y-%m-%d %H:%M:%S")
+    print(f"Current date and time: {formatted_date}")
 
-  Returns:
-    A string representing the future date in the format YYYY-MM-DD.
-  """
+def calculate_future_date(days):
+    """Calculate a future date given a number of days to add to the current date."""
+    try:
+        days = int(days)  # Ensure that the input is an integer
+    except ValueError:
+        print("Invalid input. Please enter an integer value for the number of days.")
+        return
 
-  current_date = datetime.datetime.now()
-  future_date = current_date + datetime.timedelta(days=days_to_add)
-  formatted_date = future_date.strftime("2024-04-04")
-  return formatted_date
+    current_date = datetime.now()
+    future_date = current_date + timedelta(days=days)
+    formatted_future_date = future_date.strftime("%Y-%m-%d")
+    print(f"Future date: {formatted_future_date}")
+
+def main():
+    display_current_datetime()
+    
+    days = input("Enter the number of days to add to the current date: ")
+    calculate_future_date(days)
 
 if __name__ == "__main__":
-  print("Current date and time:", datetime.datetime.now())
-  days_to_add = int(input("Enter the number of days to add to the current date: "))
-  future_date = calculate_future_date(days_to_add)
-  print("Future date:", future_date)
+    main()
 
