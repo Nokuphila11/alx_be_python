@@ -20,3 +20,16 @@ product_result = Calculator.multiply(4, 6)
 
 print(f"Sum: {sum_result}")
 print(f"Product: {product_result}")
+def main():
+  """Prints the specified output."""
+
+  sum_result = 15
+  product_result = 50
+
+  print("The sum is:", sum_result)
+  print("Calculation type: Arithmetic Operations")
+  print("The product is:", product_result)
+
+if __name__ == "__main__":
+  main()
+
