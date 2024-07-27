@@ -45,33 +45,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-import math
-
-def calculate_circle_area(radius):
-  """Calculates the area of a circle given its radius."""
-  area = math.pi * radius**2
-  return area
-
-radius = 7  # Replace with desired radius
-
-circle_area = calculate_circle_area(radius)
-print("The area of the Circle is:", circle_area)
-import math
-
-class Shape:
-    def area(self):
-        raise NotImplementedError("Subclasses must implement area()")
-
-class Circle(Shape):
-    def __init__(self, radius):
-        self.radius = radius
-
-    def area(self):
-        return math.pi * self.radius**2
-
-# Example usage:
-circle = Circle(7)
-circle_area = circle.area()
-print("The area of the Circle is:", circle_area)
-
 
