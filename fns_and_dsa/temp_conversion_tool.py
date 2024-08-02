@@ -1,29 +1,38 @@
-Function to convert Fahrenheit to Celsius
-def fahrenheit_to_celsius(fahrenheit):
-    return (fahrenheit - 32) * 5.0/9.0
+ Define global conversion factors
+FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
+
+# Function to convert Fahrenheit to Celsius
+def convert_to_celsius(fahrenheit):
+    global FAHRENHEIT_TO_CELSIUS_FACTOR
+    celsius = (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
+    return celsius
 
 # Function to convert Celsius to Fahrenheit
-def celsius_to_fahrenheit(celsius):
-    return (celsius * 9.0/5.0) + 32
+def convert_to_fahrenheit(celsius):
+    global CELSIUS_TO_FAHRENHEIT_FACTOR
+    fahrenheit = (celsius * 9 / 5) + 32
+    return fahrenheit
 
-# Main program
+# User interaction
 def main():
-    # Get temperature input from the user
-    temperature = float(input("Enter the temperature to convert: "))
-    unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
+    try:
+        temperature = float(input("Enter the temperature to convert: "))
+        unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
 
-    if unit == 'F':
-        # Convert Fahrenheit to Celsius
-        celsius = fahrenheit_to_celsius(temperature)
-        print(f"{temperature}°F is {celsius}°C")
-    elif unit == 'C':
-        # Convert Celsius to Fahrenheit
-        fahrenheit = celsius_to_fahrenheit(temperature)
-        print(f"{temperature}°C is {fahrenheit}°F")
-    else:
-        print("Invalid input. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
+        if unit == 'C':
+            converted_temp = convert_to_fahrenheit(temperature)
+            print(f"{temperature}°C is {converted_temp}°F")
+        elif unit == 'F':
+            converted_temp = convert_to_celsius(temperature)
+            print(f"{temperature}°F is {converted_temp}°C")
+        else:
+            raise ValueError("Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
+    
+    except ValueError as e:
+        print(f"Invalid temperature. Please enter a numeric value. Error: {e}")
 
-# Run the program
 if __name__ == "__main__":
     main()
+
 
