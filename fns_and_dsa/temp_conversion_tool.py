@@ -4,7 +4,8 @@ def convert_to_celsius(fahrenheit):
 
 def convert_to_fahrenheit(celsius):
   """Converts Celsius to Fahrenheit."""
-  return (celsius * 9 / 5) + 32
+  CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
+  return celsius * CELSIUS_TO_FAHRENHEIT_FACTOR + 32
 
 def main():
   while True:
